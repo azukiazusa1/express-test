@@ -45,8 +45,6 @@ const queryHelpers = {
 }
 userSchema.query = queryHelpers
 
-interface UserModel extends Model<UserDoc, typeof queryHelpers> {
-  findByUserName(username: string): Promise<UserDoc>
-}
+interface UserModel extends Model<UserDoc, typeof queryHelpers> {}
 
 export default mongoose.model<UserDoc, UserModel>('User', userSchema)
